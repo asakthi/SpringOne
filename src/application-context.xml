@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+         <bean id = "Mark" class = "com.student.mark" >
+            <constructor-arg value = "100" type="int"></constructor-arg>
+            <constructor-arg value = "101" type = "int"></constructor-arg>
+             <constructor-arg value = "102" type = "int"></constructor-arg>      
+             <!-- <property name="mark1" value = "101"></property>  
+             <property name="mark2" value = "101"></property>  
+             <property name="mark3" value = "101"></property>  --> 
+        </bean>
+        
+        <bean id = "student" class = "com.student.Student" >
+            <constructor-arg value = "Ram" type="String"></constructor-arg>
+            <constructor-arg value = "101" type = "int"></constructor-arg>   
+            <!--  <constructor-arg  ref="Mark"></constructor-arg>   -->   
+        </bean>       
+       
+        
+         <bean id = "student1" class = "com.student.Student" parent = "student">
+            <constructor-arg  ref="Mark"></constructor-arg>
+                   
+        </bean>
+         
+        </beans>
